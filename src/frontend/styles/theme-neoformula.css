@@ -1,0 +1,221 @@
+/**
+ * theme-neoformula.css
+ *
+ * Tema visual da Neoformula.
+ * Define paleta de cores, variáveis semânticas e classes utilitárias.
+ *
+ * FONTE DA VERDADE: neoformula-finance-app-spec-v1.md seção 6
+ */
+
+:root {
+  /* ========================================================================
+     CORES PRIMÁRIAS DA MARCA NEOFORMULA
+     ======================================================================== */
+  --neo-navy: #06345b;
+  --neo-teal: #009f9a;
+  --neo-green: #00a86b;
+  --neo-light-teal: #4ec7b0;
+
+  /* Cores secundárias */
+  --neo-purple: #3b2e83;
+  --neo-orange: #f7941d;
+
+  /* ========================================================================
+     ESCALA DE CINZAS
+     ======================================================================== */
+  --neo-white: #ffffff;
+  --neo-gray-100: #f5f7fa;
+  --neo-gray-300: #d2d7e0;
+  --neo-gray-600: #5c667a;
+  --neo-gray-900: #212631;
+
+  /* ========================================================================
+     CORES SEMÂNTICAS DE KPI (BENCHMARKS)
+     ======================================================================== */
+  --kpi-sensacional: #00b894;
+  --kpi-excelente: #27ae60;
+  --kpi-bom: #f1c40f;
+  --kpi-ruim: #e67e22;
+  --kpi-pessimo: #e74c3c;
+
+  /* ========================================================================
+     VARIÁVEIS SEMÂNTICAS DA APLICAÇÃO
+     ======================================================================== */
+
+  /* Backgrounds */
+  --bg-app: var(--neo-gray-100);
+  --bg-card: var(--neo-white);
+  --bg-header: var(--neo-navy);
+  --bg-sidebar: var(--neo-white);
+  --bg-hover: var(--neo-gray-100);
+
+  /* Texto */
+  --text-primary: var(--neo-gray-900);
+  --text-secondary: var(--neo-gray-600);
+  --text-on-primary: var(--neo-white);
+  --text-muted: var(--neo-gray-600);
+
+  /* Bordas */
+  --border-soft: var(--neo-gray-300);
+  --border-primary: var(--neo-teal);
+
+  /* Ações */
+  --color-primary: var(--neo-teal);
+  --color-primary-hover: var(--neo-green);
+  --color-secondary: var(--neo-orange);
+  --color-danger: var(--kpi-pessimo);
+  --color-success: var(--kpi-sensacional);
+  --color-warning: var(--kpi-bom);
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* ========================================================================
+     TIPOGRAFIA
+     ======================================================================== */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+
+  /* Tamanhos de fonte */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.25rem;   /* 20px */
+  --font-size-2xl: 1.5rem;   /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+
+  /* Pesos de fonte */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ========================================================================
+     ESPAÇAMENTO
+     ======================================================================== */
+  --spacing-xs: 0.25rem;  /* 4px */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+
+  /* ========================================================================
+     BORDER RADIUS
+     ======================================================================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* ========================================================================
+     TRANSIÇÕES
+     ======================================================================== */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+}
+
+/* ========================================================================
+   CLASSES UTILITÁRIAS DE COR
+   ======================================================================== */
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-danger { color: var(--color-danger); }
+.text-success { color: var(--color-success); }
+.text-warning { color: var(--color-warning); }
+
+.bg-primary { background-color: var(--color-primary); }
+.bg-card { background-color: var(--bg-card); }
+.bg-app { background-color: var(--bg-app); }
+
+/* ========================================================================
+   CLASSES UTILITÁRIAS DE KPI
+   ======================================================================== */
+
+.kpi-sensacional {
+  color: var(--kpi-sensacional);
+}
+
+.kpi-excelente {
+  color: var(--kpi-excelente);
+}
+
+.kpi-bom {
+  color: var(--kpi-bom);
+}
+
+.kpi-ruim {
+  color: var(--kpi-ruim);
+}
+
+.kpi-pessimo {
+  color: var(--kpi-pessimo);
+}
+
+.kpi-badge-sensacional {
+  background-color: var(--kpi-sensacional);
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.kpi-badge-excelente {
+  background-color: var(--kpi-excelente);
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.kpi-badge-bom {
+  background-color: var(--kpi-bom);
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.kpi-badge-ruim {
+  background-color: var(--kpi-ruim);
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.kpi-badge-pessimo {
+  background-color: var(--kpi-pessimo);
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ========================================================================
+   CLASSES UTILITÁRIAS DE TIPOGRAFIA
+   ======================================================================== */
+
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-normal { font-weight: var(--font-weight-normal); }
+
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }

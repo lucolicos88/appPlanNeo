@@ -1,0 +1,27 @@
+{
+  "name": "neoformula-finance-app",
+  "version": "1.0.0",
+  "description": "Aplicativo de gestão financeira e contábil em Google Apps Script",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "push": "clasp push",
+    "deploy": "npm run build && clasp push",
+    "open": "clasp open",
+    "logs": "clasp logs"
+  },
+  "keywords": [
+    "google-apps-script",
+    "finance",
+    "accounting",
+    "neoformula"
+  ],
+  "author": "Neoformula",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.83",
+    "typescript": "^5.3.3"
+  }
+}

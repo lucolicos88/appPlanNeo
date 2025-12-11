@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx clasp open:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx clasp push:*)",
+      "Bash(echo:*)",
+      "Bash(npx clasp deploy:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

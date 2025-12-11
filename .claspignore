@@ -1,0 +1,10 @@
+**/**~
+**/.DS_Store
+**/node_modules/**
+**/.git/**
+**/.vscode/**
+.prettierrc
+.eslintrc
+tsconfig.json
+frontend/scripts/**
+frontend/styles/**
