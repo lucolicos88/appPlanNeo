@@ -12,7 +12,8 @@
     "logs": "clasp logs",
     "setup": "node setup-spreadsheet.js",
     "setup-bound": "powershell -ExecutionPolicy Bypass -File ./setup-bound.ps1",
-    "bind": "node bind-to-spreadsheet.js"
+    "bind": "node bind-to-spreadsheet.js",
+    "setup-simples": "powershell -ExecutionPolicy Bypass -File ./setup-manual-simples.ps1"
   },
   "keywords": [
     "google-apps-script",
