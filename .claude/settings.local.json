@@ -17,7 +17,8 @@
       "Bash(if exist setup-manual-simples.ps1 del setup-manual-simples.ps1)",
       "Bash(if exist setup-spreadsheet.js del setup-spreadsheet.js)",
       "Bash(if exist SETUP-PLANILHA.md del SETUP-PLANILHA.md)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(cat:*)"
     ]
   }
 }

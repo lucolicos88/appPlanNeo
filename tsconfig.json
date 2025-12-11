@@ -18,7 +18,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "types": ["google-apps-script"],
-    "removeComments": true
+    "removeComments": true,
+    "moduleResolution": "node",
+    "isolatedModules": false
   },
   "include": [
     "src/**/*"
