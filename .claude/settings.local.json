@@ -18,7 +18,8 @@
       "Bash(if exist setup-spreadsheet.js del setup-spreadsheet.js)",
       "Bash(if exist SETUP-PLANILHA.md del SETUP-PLANILHA.md)",
       "Bash(powershell:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
