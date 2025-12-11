@@ -237,6 +237,177 @@ function setupInitialData(): void {
     tbLancamentos.autoResizeColumns(1, 21);
   }
 
+  // TB_EXTRATOS - Extratos bancários
+  const tbExtratos = ss.getSheetByName(SHEET_TB_EXTRATOS);
+  if (tbExtratos) {
+    tbExtratos.clear();
+    tbExtratos.getRange('A1:K1').setValues([[
+      'ID', 'Data', 'Descrição', 'Valor', 'Tipo', 'Banco',
+      'Conta', 'Status Conciliação', 'ID Lançamento', 'Observações', 'Importado Em'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    tbExtratos.autoResizeColumns(1, 11);
+  }
+
+  // TB_DRE_MENSAL - DRE mensal
+  const tbDreMensal = ss.getSheetByName(SHEET_TB_DRE_MENSAL);
+  if (tbDreMensal) {
+    tbDreMensal.clear();
+    tbDreMensal.getRange('A1:H1').setValues([[
+      'Mês/Ano', 'Grupo DRE', 'Subgrupo', 'Conta', 'Filial', 'Centro Custo', 'Valor', 'Atualizado Em'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    tbDreMensal.autoResizeColumns(1, 8);
+  }
+
+  // TB_DRE_RESUMO - DRE resumo
+  const tbDreResumo = ss.getSheetByName(SHEET_TB_DRE_RESUMO);
+  if (tbDreResumo) {
+    tbDreResumo.clear();
+    tbDreResumo.getRange('A1:F1').setValues([[
+      'Mês/Ano', 'Grupo DRE', 'Valor Real', 'Valor Orçado', 'Variação', 'Variação %'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    tbDreResumo.autoResizeColumns(1, 6);
+  }
+
+  // TB_DFC_REAL - DFC realizado
+  const tbDfcReal = ss.getSheetByName(SHEET_TB_DFC_REAL);
+  if (tbDfcReal) {
+    tbDfcReal.clear();
+    tbDfcReal.getRange('A1:G1').setValues([[
+      'Data', 'Grupo DFC', 'Descrição', 'Valor', 'Saldo Acumulado', 'Filial', 'ID Lançamento'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    tbDfcReal.autoResizeColumns(1, 7);
+  }
+
+  // TB_DFC_PROJ - DFC projetado
+  const tbDfcProj = ss.getSheetByName(SHEET_TB_DFC_PROJ);
+  if (tbDfcProj) {
+    tbDfcProj.clear();
+    tbDfcProj.getRange('A1:G1').setValues([[
+      'Data Prevista', 'Grupo DFC', 'Descrição', 'Valor Previsto', 'Saldo Projetado', 'Filial', 'Status'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    tbDfcProj.autoResizeColumns(1, 7);
+  }
+
+  // TB_KPI_RESUMO - KPIs resumo
+  const tbKpiResumo = ss.getSheetByName(SHEET_TB_KPI_RESUMO);
+  if (tbKpiResumo) {
+    tbKpiResumo.clear();
+    tbKpiResumo.getRange('A1:H1').setValues([[
+      'Mês/Ano', 'KPI', 'Valor', 'Meta', 'Variação', 'Status', 'Tendência', 'Atualizado Em'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    tbKpiResumo.autoResizeColumns(1, 8);
+  }
+
+  // TB_KPI_DETALHE - KPIs detalhados
+  const tbKpiDetalhe = ss.getSheetByName(SHEET_TB_KPI_DETALHE);
+  if (tbKpiDetalhe) {
+    tbKpiDetalhe.clear();
+    tbKpiDetalhe.getRange('A1:J1').setValues([[
+      'Data', 'KPI', 'Dimensão', 'Valor Dimensão', 'Valor KPI', 'Meta', 'Filial', 'Canal', 'Centro Custo', 'Observações'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    tbKpiDetalhe.autoResizeColumns(1, 10);
+  }
+
+  // CFG_BENCHMARKS - Benchmarks e metas
+  const cfgBenchmarks = ss.getSheetByName(SHEET_CFG_BENCHMARKS);
+  if (cfgBenchmarks) {
+    cfgBenchmarks.clear();
+    cfgBenchmarks.getRange('A1:F1').setValues([[
+      'Métrica', 'Valor Meta', 'Benchmark Mercado', 'Período', 'Unidade', 'Ativo'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    cfgBenchmarks.autoResizeColumns(1, 6);
+  }
+
+  // CFG_LABELS - Labels personalizadas
+  const cfgLabels = ss.getSheetByName(SHEET_CFG_LABELS);
+  if (cfgLabels) {
+    cfgLabels.clear();
+    cfgLabels.getRange('A1:D1').setValues([[
+      'Chave', 'Label PT-BR', 'Label EN', 'Categoria'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    cfgLabels.autoResizeColumns(1, 4);
+  }
+
+  // CFG_THEME - Configurações de tema
+  const cfgTheme = ss.getSheetByName(SHEET_CFG_THEME);
+  if (cfgTheme) {
+    cfgTheme.clear();
+    cfgTheme.getRange('A1:D1').setValues([[
+      'Elemento', 'Propriedade', 'Valor', 'Descrição'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    cfgTheme.autoResizeColumns(1, 4);
+  }
+
+  // CFG_DFC - Configurações DFC
+  const cfgDfc = ss.getSheetByName(SHEET_CFG_DFC);
+  if (cfgDfc) {
+    cfgDfc.clear();
+    cfgDfc.getRange('A1:D1').setValues([[
+      'Grupo DFC', 'Ordem', 'Descrição', 'Tipo Fluxo'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    cfgDfc.autoResizeColumns(1, 4);
+  }
+
+  // CFG_VALIDATION - Regras de validação
+  const cfgValidation = ss.getSheetByName(SHEET_CFG_VALIDATION);
+  if (cfgValidation) {
+    cfgValidation.clear();
+    cfgValidation.getRange('A1:E1').setValues([[
+      'Regra', 'Campo', 'Tipo Validação', 'Parâmetros', 'Mensagem Erro'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    cfgValidation.autoResizeColumns(1, 5);
+  }
+
+  // REF_NATUREZAS - Naturezas financeiras
+  const refNaturezas = ss.getSheetByName(SHEET_REF_NATUREZAS);
+  if (refNaturezas) {
+    refNaturezas.clear();
+    refNaturezas.getRange('A1:D1').setValues([[
+      'Código', 'Descrição', 'Tipo', 'Ativa'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    refNaturezas.autoResizeColumns(1, 4);
+  }
+
+  // RPT_COMITE_FATURAMENTO - Relatório de faturamento
+  const rptFaturamento = ss.getSheetByName(SHEET_RPT_COMITE_FATURAMENTO);
+  if (rptFaturamento) {
+    rptFaturamento.clear();
+    rptFaturamento.getRange('A1:H1').setValues([[
+      'Período', 'Filial', 'Canal', 'Faturamento Bruto', 'Deduções', 'Faturamento Líquido', 'Meta', 'Atingimento %'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    rptFaturamento.autoResizeColumns(1, 8);
+  }
+
+  // RPT_COMITE_DRE - Relatório DRE
+  const rptDre = ss.getSheetByName(SHEET_RPT_COMITE_DRE);
+  if (rptDre) {
+    rptDre.clear();
+    rptDre.getRange('A1:F1').setValues([[
+      'Período', 'Linha DRE', 'Valor Real', 'Valor Orçado', 'Variação', 'Variação %'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    rptDre.autoResizeColumns(1, 6);
+  }
+
+  // RPT_COMITE_DFC - Relatório DFC
+  const rptDfc = ss.getSheetByName(SHEET_RPT_COMITE_DFC);
+  if (rptDfc) {
+    rptDfc.clear();
+    rptDfc.getRange('A1:E1').setValues([[
+      'Período', 'Grupo DFC', 'Valor Realizado', 'Valor Projetado', 'Saldo Final'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    rptDfc.autoResizeColumns(1, 5);
+  }
+
+  // RPT_COMITE_KPIS - Relatório KPIs
+  const rptKpis = ss.getSheetByName(SHEET_RPT_COMITE_KPIS);
+  if (rptKpis) {
+    rptKpis.clear();
+    rptKpis.getRange('A1:G1').setValues([[
+      'Período', 'KPI', 'Valor', 'Meta', 'Variação', 'Status', 'Observações'
+    ]]).setFontWeight('bold').setBackground('#4285F4').setFontColor('#FFFFFF');
+    rptKpis.autoResizeColumns(1, 7);
+  }
+
   SpreadsheetApp.getUi().alert(
     'Dados Iniciais Criados',
     'Estrutura da planilha configurada com sucesso!\n\n' +
@@ -245,7 +416,9 @@ function setupInitialData(): void {
     '✓ Plano de contas básico\n' +
     '✓ Centros de custo\n' +
     '✓ Canais de venda\n' +
-    '✓ Estrutura de lançamentos',
+    '✓ Estrutura de lançamentos\n' +
+    '✓ Todas as tabelas transacionais\n' +
+    '✓ Relatórios do comitê',
     SpreadsheetApp.getUi().ButtonSet.OK
   );
 }

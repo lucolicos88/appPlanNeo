@@ -70,49 +70,56 @@ function onOpen(): void {
  */
 
 function openDashboard(): void {
-  const html = HtmlService.createHtmlOutputFromFile('frontend/views/dashboard')
+  const html = HtmlService.createTemplateFromFile('frontend/views/dashboard')
+    .evaluate()
     .setWidth(1200)
     .setHeight(800);
   SpreadsheetApp.getUi().showModalDialog(html, 'Dashboard Financeiro');
 }
 
 function openNovoLancamento(): void {
-  const html = HtmlService.createHtmlOutputFromFile('frontend/views/lancamentos')
+  const html = HtmlService.createTemplateFromFile('frontend/views/lancamentos')
+    .evaluate()
     .setWidth(1200)
     .setHeight(800);
   SpreadsheetApp.getUi().showModalDialog(html, 'Lançamentos');
 }
 
 function openConciliacao(): void {
-  const html = HtmlService.createHtmlOutputFromFile('frontend/views/conciliacao')
+  const html = HtmlService.createTemplateFromFile('frontend/views/conciliacao')
+    .evaluate()
     .setWidth(1200)
     .setHeight(800);
   SpreadsheetApp.getUi().showModalDialog(html, 'Conciliação Bancária');
 }
 
 function openDRE(): void {
-  const html = HtmlService.createHtmlOutputFromFile('frontend/views/dre')
+  const html = HtmlService.createTemplateFromFile('frontend/views/dre')
+    .evaluate()
     .setWidth(1200)
     .setHeight(800);
   SpreadsheetApp.getUi().showModalDialog(html, 'DRE');
 }
 
 function openDFC(): void {
-  const html = HtmlService.createHtmlOutputFromFile('frontend/views/dfc')
+  const html = HtmlService.createTemplateFromFile('frontend/views/dfc')
+    .evaluate()
     .setWidth(1200)
     .setHeight(800);
   SpreadsheetApp.getUi().showModalDialog(html, 'Fluxo de Caixa');
 }
 
 function openKPI(): void {
-  const html = HtmlService.createHtmlOutputFromFile('frontend/views/kpi')
+  const html = HtmlService.createTemplateFromFile('frontend/views/kpi')
+    .evaluate()
     .setWidth(1200)
     .setHeight(800);
   SpreadsheetApp.getUi().showModalDialog(html, 'KPIs');
 }
 
 function openConfiguracoes(): void {
-  const html = HtmlService.createHtmlOutputFromFile('frontend/views/configuracoes')
+  const html = HtmlService.createTemplateFromFile('frontend/views/configuracoes')
+    .evaluate()
     .setWidth(1000)
     .setHeight(600);
   SpreadsheetApp.getUi().showModalDialog(html, 'Configurações');
