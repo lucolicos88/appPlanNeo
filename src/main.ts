@@ -162,21 +162,20 @@ function setupTriggers(): void {
 /**
  * Exporta funções globais para o escopo do Apps Script
  *
- * IMPORTANTE: Apps Script precisa que as funções estejam no escopo global
- * Como o TypeScript não exporta corretamente com 'global', precisamos declarar
- * as funções diretamente no escopo global usando 'declare var globalThis'
+ * IMPORTANTE: gas-webpack-plugin detecta estas declarações 'global'
+ * e as move para o escopo global do Apps Script
  */
-declare var globalThis: any;
+declare var global: any;
 
-globalThis.doGet = doGet;
-globalThis.include = includeFile;
-globalThis.onOpen = onOpen;
-globalThis.openDashboard = openDashboard;
-globalThis.openNovoLancamento = openNovoLancamento;
-globalThis.openConciliacao = openConciliacao;
-globalThis.openDRE = openDRE;
-globalThis.openDFC = openDFC;
-globalThis.openKPI = openKPI;
-globalThis.openConfiguracoes = openConfiguracoes;
-globalThis.refreshCache = refreshCache;
-globalThis.setupTriggers = setupTriggers;
+global.doGet = doGet;
+global.include = includeFile;
+global.onOpen = onOpen;
+global.openDashboard = openDashboard;
+global.openNovoLancamento = openNovoLancamento;
+global.openConciliacao = openConciliacao;
+global.openDRE = openDRE;
+global.openDFC = openDFC;
+global.openKPI = openKPI;
+global.openConfiguracoes = openConfiguracoes;
+global.refreshCache = refreshCache;
+global.setupTriggers = setupTriggers;
