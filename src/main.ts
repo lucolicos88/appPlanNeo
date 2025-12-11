@@ -7,6 +7,7 @@
 
 import { handleDoGet, include } from './services/ui-service';
 import { installTriggers } from './services/scheduler-service';
+import { runCompleteSetup } from './setup-sheets';
 
 /**
  * Função doGet - Entry point para web app
@@ -58,6 +59,8 @@ function onOpen(): void {
         .createMenu('Administração')
         .addItem('Configurações', 'openConfiguracoes')
         .addItem('Instalar Triggers', 'setupTriggers')
+        .addSeparator()
+        .addItem('⚙️ Setup da Planilha', 'runCompleteSetup')
     )
     .addToUi();
 }
@@ -179,3 +182,4 @@ global.openKPI = openKPI;
 global.openConfiguracoes = openConfiguracoes;
 global.refreshCache = refreshCache;
 global.setupTriggers = setupTriggers;
+global.runCompleteSetup = runCompleteSetup;
