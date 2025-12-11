@@ -6,5 +6,11 @@
 .prettierrc
 .eslintrc
 tsconfig.json
-frontend/scripts/**
-frontend/styles/**
+dist/**
+temp-bound/**
+*.md
+setup-*.js
+setup-*.ps1
+bind-*.js
+src/frontend/scripts/**
+src/frontend/styles/**

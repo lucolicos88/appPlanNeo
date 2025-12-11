@@ -9,7 +9,10 @@
     "push": "clasp push",
     "deploy": "npm run build && clasp push",
     "open": "clasp open",
-    "logs": "clasp logs"
+    "logs": "clasp logs",
+    "setup": "node setup-spreadsheet.js",
+    "setup-bound": "powershell -ExecutionPolicy Bypass -File ./setup-bound.ps1",
+    "bind": "node bind-to-spreadsheet.js"
   },
   "keywords": [
     "google-apps-script",
