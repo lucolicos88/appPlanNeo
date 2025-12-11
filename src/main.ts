@@ -5,18 +5,37 @@
  * Centraliza roteamento web (doGet) e registros de menus.
  */
 
-import { handleDoGet, include } from './services/ui-service';
+import { include } from './services/ui-service';
 import { installTriggers } from './services/scheduler-service';
 import { runCompleteSetup } from './setup-sheets';
+import { setupAllSampleData } from './setup-sample-data';
+import {
+  getViewHtml,
+  getReferenceData,
+  getDashboardData,
+  getContasPagar,
+  pagarConta,
+  pagarContasEmLote,
+  getContasReceber,
+  receberConta,
+  getConciliacaoData,
+  conciliarItens,
+  conciliarAutomatico,
+} from './services/webapp-service';
 
 /**
  * Função doGet - Entry point para web app
  *
  * IMPORTANTE: Esta função é chamada automaticamente pelo Apps Script
  * quando o usuário acessa a URL do web app
+ *
+ * Serve a aplicação web standalone (não modal do Sheets)
  */
 function doGet(e: any): GoogleAppsScript.HTML.HtmlOutput {
-  return handleDoGet(e);
+  const template = HtmlService.createTemplateFromFile('frontend/views/app');
+  return template.evaluate()
+    .setTitle('Neoformula Finance')
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
 }
 
 /**
@@ -61,6 +80,9 @@ function onOpen(): void {
         .addItem('Instalar Triggers', 'setupTriggers')
         .addSeparator()
         .addItem('⚙️ Setup da Planilha', 'runCompleteSetup')
+        .addItem('📝 Criar Dados de Exemplo', 'setupAllSampleData')
+        .addSeparator()
+        .addItem('🌐 Abrir Web App', 'openWebApp')
     )
     .addToUi();
 }
@@ -169,6 +191,21 @@ function setupTriggers(): void {
   }
 }
 
+function openWebApp(): void {
+  const url = ScriptApp.getService().getUrl();
+  const html = HtmlService.createHtmlOutput(
+    `<html><body>
+      <h2>Web App URL</h2>
+      <p>Acesse a aplicação web no link abaixo:</p>
+      <p><a href="${url}" target="_blank">${url}</a></p>
+      <p><button onclick="window.open('${url}', '_blank')">Abrir Web App</button></p>
+      <br><p><small>Copie este link para acessar a aplicação de qualquer lugar.</small></p>
+    </body></html>`
+  ).setWidth(600).setHeight(200);
+
+  SpreadsheetApp.getUi().showModalDialog(html, 'URL da Web App');
+}
+
 /**
  * Exporta funções globais para o escopo do Apps Script
  *
@@ -190,3 +227,18 @@ global.openConfiguracoes = openConfiguracoes;
 global.refreshCache = refreshCache;
 global.setupTriggers = setupTriggers;
 global.runCompleteSetup = runCompleteSetup;
+global.setupAllSampleData = setupAllSampleData;
+global.openWebApp = openWebApp;
+
+// Web App API Functions
+global.getViewHtml = getViewHtml;
+global.getReferenceData = getReferenceData;
+global.getDashboardData = getDashboardData;
+global.getContasPagar = getContasPagar;
+global.pagarConta = pagarConta;
+global.pagarContasEmLote = pagarContasEmLote;
+global.getContasReceber = getContasReceber;
+global.receberConta = receberConta;
+global.getConciliacaoData = getConciliacaoData;
+global.conciliarItens = conciliarItens;
+global.conciliarAutomatico = conciliarAutomatico;
