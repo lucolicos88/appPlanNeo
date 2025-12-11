@@ -163,28 +163,20 @@ function setupTriggers(): void {
  * Exporta funções globais para o escopo do Apps Script
  *
  * IMPORTANTE: Apps Script precisa que as funções estejam no escopo global
+ * Como o TypeScript não exporta corretamente com 'global', precisamos declarar
+ * as funções diretamente no escopo global usando 'declare var globalThis'
  */
-// @ts-ignore
-global.doGet = doGet;
-// @ts-ignore
-global.include = includeFile;
-// @ts-ignore
-global.onOpen = onOpen;
-// @ts-ignore
-global.openDashboard = openDashboard;
-// @ts-ignore
-global.openNovoLancamento = openNovoLancamento;
-// @ts-ignore
-global.openConciliacao = openConciliacao;
-// @ts-ignore
-global.openDRE = openDRE;
-// @ts-ignore
-global.openDFC = openDFC;
-// @ts-ignore
-global.openKPI = openKPI;
-// @ts-ignore
-global.openConfiguracoes = openConfiguracoes;
-// @ts-ignore
-global.refreshCache = refreshCache;
-// @ts-ignore
-global.setupTriggers = setupTriggers;
+declare var globalThis: any;
+
+globalThis.doGet = doGet;
+globalThis.include = includeFile;
+globalThis.onOpen = onOpen;
+globalThis.openDashboard = openDashboard;
+globalThis.openNovoLancamento = openNovoLancamento;
+globalThis.openConciliacao = openConciliacao;
+globalThis.openDRE = openDRE;
+globalThis.openDFC = openDFC;
+globalThis.openKPI = openKPI;
+globalThis.openConfiguracoes = openConfiguracoes;
+globalThis.refreshCache = refreshCache;
+globalThis.setupTriggers = setupTriggers;
