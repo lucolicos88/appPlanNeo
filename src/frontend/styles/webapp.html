@@ -476,18 +476,13 @@ select.form-control {
   right: 0;
   bottom: 0;
   background: rgba(0,0,0,0.5);
-  display: none; /* Oculto por padrão */
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9997;
 }
 
-.modal-overlay.show {
-  display: flex; /* Mostrar quando tiver a classe 'show' */
-}
-
 .modal {
-  display: none; /* Oculto por padrão */
   background: white;
   border-radius: 12px;
   max-width: 600px;
@@ -495,10 +490,6 @@ select.form-control {
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-}
-
-.modal.show {
-  display: block; /* Mostrar quando tiver a classe 'show' */
 }
 
 .modal-header {
