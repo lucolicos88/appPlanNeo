@@ -1,5 +1,33 @@
 <script>
 // ============================================================================
+// MODAL MANAGER
+// ============================================================================
+const ModalManager = {
+  open: function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('show');
+    }
+  },
+  close: function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove('show');
+      // Reset form if exists
+      const form = modal.querySelector('form');
+      if (form) {
+        form.reset();
+        // Reset hidden edit index fields
+        const editIndex = modal.querySelector('[id$="-edit-index"]');
+        if (editIndex) {
+          editIndex.value = '';
+        }
+      }
+    }
+  }
+};
+
+// ============================================================================
 // GLOBAL STATE
 // ============================================================================
 
